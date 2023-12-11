@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Chart</title>
+    <style>
+      .center-container {
+          text-align: center;
+      }
+      body{
+          margin: 30px;
+      }
+      body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+      text-align: center;
+
+    }
+
+      .center-container img {
+          max-width: 100%;
+          height: auto;
+          width: 300px;
+          
+      }
+      ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #63aa75;
+      }
+
+      li {
+      float: left;
+      }
+
+      li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+      background-color: #901268;
+      }
+
+      .active {
+      background-color: #6aaed8;
+      }
+      
+      footer{
+      background-color: #30a85e;
+      text-align: center;
+      color: #ffffff;
+    }
+</style>
+  </head>
+  <body >
+    
+      <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="java.html">Javascript</a></li>
+          <li><a href="api.html">api</a></li>
+        </ul>
+        
+    <div class="a-z"><h1>A-Z Auto</h1>
+      <div id="output"></div>
+    </div>
+    <script>
+      // Function to run from A to Z
+ function runFromAToZ() {
+    var outputElement = document.getElementById("output");
+    var currentCharCode = 65; // ASCII code for 'A'
+
+    // Set up an interval to run every 500 milliseconds
+    var intervalId = setInterval(function() {
+        // Convert the ASCII code to a letter
+        var letter = String.fromCharCode(currentCharCode);
+
+        // Display the letter
+        outputElement.innerHTML = letter;
+
+        // Increment the ASCII code
+        currentCharCode++;
+
+        // Check if we've reached 'Z'
+        if (currentCharCode > 90) { // ASCII code for 'Z'
+            // Reset to 'A' when reaching 'Z'
+            currentCharCode = 65;
+        }
+    }, 500);
+}
+
+// Call the function when the page loads
+runFromAToZ();
+    </script>
+    <hr>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['ปี2021', 'ปี2022', 'ปี2023',],
+            datasets: [{
+              label: '# of Votes',
+              data: [236, 250, 233,],
+              backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+      <div>
+        <canvas id="Chart"></canvas>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const tx = document.getElementById('Chart');
+      
+        new Chart(tx, {
+          type: 'pie',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange','pink'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 25, 3, 5, 2, 3, 20],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+      
+</body>
+<footer><p>phitsini@2023</p></footer>
+</html>
